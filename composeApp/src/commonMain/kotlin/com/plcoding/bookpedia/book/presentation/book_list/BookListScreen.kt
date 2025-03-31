@@ -88,7 +88,6 @@ private fun BookListScreen(
     LaunchedEffect(pagerState.currentPage){
         onAction(BookListAction.OnTabSelected(pagerState.currentPage))
     }
-
     Column(
         modifier = modifier
             .fillMaxSize()

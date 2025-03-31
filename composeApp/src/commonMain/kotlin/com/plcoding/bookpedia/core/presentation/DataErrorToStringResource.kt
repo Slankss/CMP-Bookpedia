@@ -3,6 +3,7 @@ package com.plcoding.bookpedia.core.presentation
 import cmp_bookpedia.composeapp.generated.resources.Res
 import cmp_bookpedia.composeapp.generated.resources.error_disk_full
 import cmp_bookpedia.composeapp.generated.resources.error_no_internet
+import cmp_bookpedia.composeapp.generated.resources.error_not_found
 import cmp_bookpedia.composeapp.generated.resources.error_request_timeout
 import cmp_bookpedia.composeapp.generated.resources.error_serialization
 import cmp_bookpedia.composeapp.generated.resources.error_too_many_request
@@ -18,6 +19,7 @@ fun DataError.toUiText(): UiText {
         DataError.Remote.TOO_MANY_REQUESTS -> Res.string.error_too_many_request
         DataError.Remote.SERIALIZATION -> Res.string.error_serialization
         DataError.Remote.UNKNOWN -> Res.string.error_unknown
+        DataError.Local.NOT_FOUND -> Res.string.error_not_found
         else -> Res.string.error_unknown
     }
     return UiText.StringResourceId(stringRes)

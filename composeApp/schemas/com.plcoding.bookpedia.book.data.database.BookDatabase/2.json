@@ -1,8 +1,8 @@
 {
   "formatVersion": 1,
   "database": {
-    "version": 1,
-    "identityHash": "d59bc79c50cfe4cb85ff4bf89b30afbf",
+    "version": 2,
+    "identityHash": "24c91bf377fa43fefc6be7b8017fe7fc",
     "entities": [
       {
         "tableName": "FavoriteBookEntity",
@@ -152,7 +152,7 @@
       },
       {
         "tableName": "QueryEntity",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `searchQuery` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, `results` TEXT NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `query` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, `results` TEXT NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -161,8 +161,8 @@
             "notNull": true
           },
           {
-            "fieldPath": "searchQuery",
-            "columnName": "searchQuery",
+            "fieldPath": "query",
+            "columnName": "query",
             "affinity": "TEXT",
             "notNull": true
           },
@@ -189,7 +189,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd59bc79c50cfe4cb85ff4bf89b30afbf')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '24c91bf377fa43fefc6be7b8017fe7fc')"
     ]
   }
 }

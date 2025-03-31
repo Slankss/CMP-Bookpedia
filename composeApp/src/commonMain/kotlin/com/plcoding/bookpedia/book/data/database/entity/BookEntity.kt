@@ -1,4 +1,4 @@
-package com.plcoding.bookpedia.book.data.database
+package com.plcoding.bookpedia.book.data.database.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

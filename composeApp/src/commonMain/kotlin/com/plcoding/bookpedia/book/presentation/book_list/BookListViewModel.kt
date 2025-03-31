@@ -58,7 +58,6 @@ class BookListViewModel(
             is BookListAction.OnBookClick -> {
 
             }
-
         }
     }
 
@@ -67,7 +66,7 @@ class BookListViewModel(
         state
             .map { it.searchQuery }
             .distinctUntilChanged()
-            .debounce(500L)
+            .debounce(1000L)
             .onEach { query ->
                 when {
                     query.isBlank() -> {
@@ -100,7 +99,7 @@ class BookListViewModel(
         _state.update { it.copy(
             isLoading = true
         ) }
-        bookRepository.searchBooks(query)
+        bookRepository.searchBooks(query.lowercase())
             .onSuccess { searchResults ->
                 _state.update { it.copy(
                     isLoading = false,
